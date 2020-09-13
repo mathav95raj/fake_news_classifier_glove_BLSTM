@@ -1,3 +1,5 @@
+# fake_news_classifier_glove_BLSTM
+
 A fake news classifier model is built with a Bidirectional LSTM and Glove embeddings of 100 dimension used as feature. 
 
 Reason for choosing
