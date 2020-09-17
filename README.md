@@ -16,3 +16,6 @@ words present in glove
 frequent words present in the training set (frequency adjusted in config)
 			
 The nonfrequent words are designated a common <other> token. The sequence length is padded according to the maximum news title length (adjusted in config)
+
+Thanks to https://github.com/sachinruk/deepschool.io for the custom class for concatenating fixed and trainable embedding layer..
+related query by him in stack overflow: https://stackoverflow.com/questions/46032700/concatenate-embedding-layers/46149153#46149153
