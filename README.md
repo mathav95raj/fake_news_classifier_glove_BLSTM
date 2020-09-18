@@ -11,11 +11,17 @@ The glove vecotrs chosen for this project was learnt from Wikipedia 2014 + Gigaw
 
  Trainable parameters have been substantially reduced from 1 million to about 32 thousand.
 
-When a training set is passed, a custom embedding layer class separates out 
-words present in glove
-frequent words present in the training set (frequency adjusted in config)
+A custom embedding layer class is implemented that performs backpropagation training for only a portion of the embedding matrix
+Example:
+Vocabulary of training set : 10k
+words in training set that are also in Glove : 8k  (Non Trainable)
+words in training set, not in Glove but each word occurs greather than WORD_FREQUENCY(see config) times : 1k (Trainable)
+words in training set, not in Glove, each word occurs less frequently : represented by <other> token (Trainable)
+Padding a news title to fixed length(see config): represented by <pad> token (Trainable)
+
+I faced issue in implementing the custom class, a simple keras.concatenate would not do the job because the one hot vector indices were re numbered when I created a separate layer for fixed and variable embeddings.. instead of the embedding matrix looking like {0 1 ..7999 |8000.. 9001} it was like {0 1 ... 7999 | 0 1 .... 1001}
 			
-The nonfrequent words are designated a common <other> token. The sequence length is padded according to the maximum news title length (adjusted in config)
+
 
 Thanks to https://github.com/sachinruk/deepschool.io for the custom class for concatenating fixed and trainable embedding layer..
 related query by him in stack overflow: https://stackoverflow.com/questions/46032700/concatenate-embedding-layers/46149153#46149153
