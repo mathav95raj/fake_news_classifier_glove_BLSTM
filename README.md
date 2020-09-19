@@ -6,9 +6,10 @@ https://www.kaggle.com/mathav95raj/blstm-fake-news-classifier-with-glove-embeddi
 Reason for choosing
 BiLSTM - Vanilla Recurrent neural networks cannot remember long range dependencies in a sentence. A LSTM layer has forget, update and output gates which allow the model to have control on what information is retained and what is discarded. Since the full news text is available beforehand, a bidirectional layer allows us to interpret information from a sentence in both forward and reverse direction
 
-Glove vectors - Traditional way of learning embeddings will result in a huge number of parameters to be learnt and there are high chances that the model might overfit. To avoid this issue, transfer learning was performed by utlizing pre trained embeddings from https://nlp.stanford.edu/projects/glove/
+Glove vectors - Traditional way of learning embeddings will result in a huge number of parameters to be learnt and there are high chances that the model might overfit. To avoid this issue, transfer learning was performed by utlizing pre trained embeddings from https://nlp.stanford.edu/projects/glove/  
  
 The glove vecotrs chosen for this project was learnt from Wikipedia 2014 + Gigaword 5 (6B tokens, 400K vocab, uncased, 100d) 
+NOTE: Glove vectors can be downloaded separately and change the glove path accordingly
 
  Trainable parameters have been substantially reduced from 1 million to about 32 thousand.
 
