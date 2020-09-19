@@ -1,6 +1,7 @@
 # fake_news_classifier_glove_BLSTM
 
-A fake news classifier model is built with a Bidirectional LSTM and Glove embeddings of 100 dimension used as feature. 
+A fake news classifier model is built with a Bidirectional LSTM and Glove embeddings of 100 dimension used as feature. Achieved a public score of 0.92 in kaggle submission
+https://www.kaggle.com/mathav95raj/blstm-fake-news-classifier-with-glove-embeddings
 
 Reason for choosing
 BiLSTM - Vanilla Recurrent neural networks cannot remember long range dependencies in a sentence. A LSTM layer has forget, update and output gates which allow the model to have control on what information is retained and what is discarded. Since the full news text is available beforehand, a bidirectional layer allows us to interpret information from a sentence in both forward and reverse direction
